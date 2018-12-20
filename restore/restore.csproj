@@ -1,0 +1,22 @@
+<Project>
+  <PropertyGroup>
+    <MsBuildProjectExtensionsPath>C:\Users\AndriusK\.dotnet\tools\.store\.stage\2dkyea3c.flv</MsBuildProjectExtensionsPath>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RestorePackagesPath>C:\Users\AndriusK\.dotnet\tools\.store\.stage\2dkyea3c.flv</RestorePackagesPath>
+    <RestoreProjectStyle>DotnetToolReference</RestoreProjectStyle>
+    <RestoreRootConfigDirectory>D:\Beta\mono64\winforms\eng\common</RestoreRootConfigDirectory>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <RestoreFallbackFolders>clear</RestoreFallbackFolders>
+    <RestoreAdditionalProjectSources></RestoreAdditionalProjectSources>
+    <RestoreAdditionalProjectFallbackFolders></RestoreAdditionalProjectFallbackFolders>
+    <RestoreAdditionalProjectFallbackFoldersExcludes></RestoreAdditionalProjectFallbackFoldersExcludes>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="microsoft.dotnet.darc" Version="[1.0.0-beta.18612.12, )" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>
