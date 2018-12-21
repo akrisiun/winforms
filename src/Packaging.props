@@ -1,8 +1,11 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PreReleaseLabel>beta</PreReleaseLabel>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">4.8.0</PackageVersion>
+
     <PackageDescriptionFile>$(ProjectDir)pkg/descriptions.json</PackageDescriptionFile>
-    <PackageLicenseFile>$(ProjectDir)pkg/dotnet_library_license.txt</PackageLicenseFile>
+    <PackageLicenseFile></PackageLicenseFile>
+    <!-- <PackageLicenseFile>$(ProjectDir)pkg\dotnet_library_license.txt</PackageLicenseFile> -->
     <PackageThirdPartyNoticesFile>$(ProjectDir)pkg/ThirdPartyNotices.txt</PackageThirdPartyNoticesFile>
     <RuntimeIdGraphDefinitionFile>$(ProjectDir)pkg/Microsoft.NETCore.Platforms/runtime.json</RuntimeIdGraphDefinitionFile>
     <ReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</ReleaseNotes>
@@ -20,7 +23,6 @@
     <PlatformPackageVersion Condition="'$(PlatformPackageVersion)' == ''">2.0.0</PlatformPackageVersion>
 
     <!-- by default all packages will use the same version which revs with respect to product version -->
-    <PackageVersion Condition="'$(PackageVersion)' == ''">4.4.0</PackageVersion>
     <SkipValidatePackageTargetFramework>true</SkipValidatePackageTargetFramework>
     <SkipGenerationCheck>true</SkipGenerationCheck>
     <!-- disable layout creation in favor of binplacing -->

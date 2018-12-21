@@ -1,0 +1,10 @@
+
+ license file ..winforms\src\pkg/dotnet_library_license.txt' does not exist in the package. 
+ src\System.Security.Permissions\System.Security.Permissions.csproj]
+ 
+C:\Program Files\dotnet\sdk\3.0.100-preview-009820\Sdks\NuGet.Build.Tasks.Pack\build\NuGet.Build.Tasks.Pack.targets 199
+LicenseUrl="$(PackageLicenseUrl)"
+ProjectUrl="$(PackageProjectUrl)"
+
+ 
+ So let's create it.
