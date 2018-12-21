@@ -9,10 +9,11 @@ using System.Runtime.Serialization;
 namespace System.Security
 {
     [Serializable]
-    public partial class PermissionSet2 : ICollection, IEnumerable, IDeserializationCallback, ISecurityEncodable, IStackWalk
+    public partial class PermissionSet : ICollection, IEnumerable, IDeserializationCallback, ISecurityEncodable, IStackWalk
     {
-        public PermissionSet2(PermissionState state) { }
-        public PermissionSet2(PermissionSet permSet) { }
+        public PermissionSet(PermissionState state) { }
+        public PermissionSet(PermissionSet permSet) { }
+
         public virtual int Count { get { return 0; } }
         public virtual bool IsReadOnly { get { return false; } }
         public virtual bool IsSynchronized { get { return false; } }

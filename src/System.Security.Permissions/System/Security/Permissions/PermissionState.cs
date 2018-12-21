@@ -5,7 +5,7 @@
 namespace System.Security.Permissions
 {
     [Serializable]
-    public enum PermissionState2
+    public enum PermissionState
     {
         None = 0,
         Unrestricted = 1,

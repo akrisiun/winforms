@@ -4,7 +4,10 @@
 
 namespace System.Security
 {
-    public partial interface IStackWalk2
+    public partial interface IStackWalk2 : IStackWalk
+    { }
+
+    public partial interface IStackWalk
     {
         void Assert();
         void Demand();
