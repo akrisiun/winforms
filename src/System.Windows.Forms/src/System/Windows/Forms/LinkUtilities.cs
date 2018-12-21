@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -29,13 +29,11 @@ using System.Security.Permissions;
         ///     of this file of the valid names to retrieve.
         /// </devdoc>
         private static Color GetIEColor(string name) {
-            // 
 
-
-
-
-            new RegistryPermission(PermissionState.Unrestricted).Assert();
-            try {
+            // TODO WTF
+            // new RegistryPermission(PermissionState.Unrestricted).Assert();
+            try
+            {
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(IESettingsRegPath);
 
                 if (key != null) {
@@ -121,13 +119,11 @@ using System.Security.Permissions;
         ///     Retrieves the IE settings for link behavior from the registry.
         /// </devdoc>
         public static LinkBehavior GetIELinkBehavior() {
-            // 
 
-
-
-
-            new RegistryPermission(PermissionState.Unrestricted).Assert();
-            try {
+            // TODO WTF
+            // new RegistryPermission(PermissionState.Unrestricted).Assert();
+            try
+            {
                 RegistryKey key = null;
                 try {
                     key = Registry.CurrentUser.OpenSubKey(IEMainRegPath);

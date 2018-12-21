@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>Moq.Core</PackageId>
+    <IsPackable>false</IsPackable>
+    <PrimaryOutputFrameworkSpecific>true</PrimaryOutputFrameworkSpecific>
+    <IncludeContentInPackage>$(IncludeApi)</IncludeContentInPackage>
+    <ContentKind Condition="'$(IncludeContentInPackage)' != 'false'">None</ContentKind>
+    <LangVersion>7.2</LangVersion>
+    <Version>5.9.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Moq.Sdk\Moq.Sdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IFluentInterface" Version="2.0.4" Pack="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="contentFiles\**\*.cs" />
+    <None Remove="contentFiles\**\*.*" />
+    <Content Include="contentFiles\**\*.*" CopyToOutputDirectory="PreserveNewest" Kind="$(ContentKind)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

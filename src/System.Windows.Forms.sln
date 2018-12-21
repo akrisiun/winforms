@@ -1,0 +1,128 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Windows.Forms", "System.Windows.Forms\src\System.Windows.Forms.csproj", "{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Security.Permissions", "System.Security.Permissions\System.Security.Permissions.csproj", "{07390899-C8F6-4E83-A3A9-6867B8CB46A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Windows.Forms.Tests", "System.Windows.Forms\tests\UnitTests\System.Windows.Forms.Tests.csproj", "{9A7E6C29-AA28-4353-BB73-E139E260FC97}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moq", "Moq\Moq\Moq.csproj", "{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moq.Sdk", "Moq\Moq.Sdk\Moq.Sdk.csproj", "{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stunts", "Stunts\Stunts\Stunts.csproj", "{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoqSrc", "MoqSrc", "{8289A4E0-821A-4C1D-B3BC-AA0A242E60E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloForms", "HelloForms\HelloForms.csproj", "{D5DAD315-3FBD-4233-9240-B210818C51EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		net461-Windows_NT-Debug|Any CPU = net461-Windows_NT-Debug|Any CPU
+		net461-Windows_NT-Release|Any CPU = net461-Windows_NT-Release|Any CPU
+		netcoreapp-Debug|Any CPU = netcoreapp-Debug|Any CPU
+		netcoreapp-Release|Any CPU = netcoreapp-Release|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB07C03-3D9C-4D59-A6C2-C11F72F6D59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07390899-C8F6-4E83-A3A9-6867B8CB46A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7E6C29-AA28-4353-BB73-E139E260FC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.net461-Windows_NT-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.net461-Windows_NT-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.net461-Windows_NT-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.net461-Windows_NT-Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.netcoreapp-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.netcoreapp-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.netcoreapp-Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.netcoreapp-Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DAD315-3FBD-4233-9240-B210818C51EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D3A2FD0-59F3-4609-BED8-B4BEDC362299} = {8289A4E0-821A-4C1D-B3BC-AA0A242E60E1}
+		{3D319A44-7F9F-43F8-9C2C-E2A6145D9DAF} = {8289A4E0-821A-4C1D-B3BC-AA0A242E60E1}
+		{9FEC1AC1-1EB6-4789-9EAC-0BB5969D6E9D} = {8289A4E0-821A-4C1D-B3BC-AA0A242E60E1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CD2A397-E407-4834-8253-2BDC05EC0B9E}
+	EndGlobalSection
+EndGlobal

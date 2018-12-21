@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -178,13 +178,14 @@ namespace System.Windows.Forms {
                 IntPtr currentHandle = handle;
                 int language = unchecked( (int) (long)currentHandle) & 0xffff;
                 int device = (unchecked( (int) (long)currentHandle) >> 16) & 0x0fff;
-    
+
                 // 
 
+                // TODO WTF
+                // new RegistryPermission(PermissionState.Unrestricted).Assert();
 
-                new RegistryPermission(PermissionState.Unrestricted).Assert();
-                
-                try {
+                try
+                {
                     if (device == language || device == 0) {
                         // Default keyboard for language
                         string keyName = Convert.ToString(language, 16);

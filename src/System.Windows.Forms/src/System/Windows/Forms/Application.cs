@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -195,7 +195,8 @@ namespace System.Windows.Forms {
                     try {
                         //We need access to be able to read from the registry here.  We're not creating a 
                         //registry key, nor are we returning information from the registry to the user.
-                        new RegistryPermission(PermissionState.Unrestricted).Assert();
+                        // TODO WTF
+                        // new RegistryPermission(PermissionState.Unrestricted).Assert();
                         RegistryKey key = Registry.LocalMachine.OpenSubKey(CommonAppDataRegistryKeyName);
                         if (key != null) {
                             object value = key.GetValue(everettThreadAffinityValue);

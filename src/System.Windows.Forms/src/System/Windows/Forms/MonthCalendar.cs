@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -199,8 +199,10 @@ namespace System.Windows.Forms {
                     // We need to assert a registry access permission, this is safe because
                     // we are reading the registry and are not returning the information 
                     // from the registry to the user.
-                    new RegistryPermission(PermissionState.Unrestricted).Assert();
-                    try {
+                    // TODO WTF
+                    // new RegistryPermission(PermissionState.Unrestricted).Assert();
+                    try
+                    {
                         // for 32 bit applications on 64 bit machines this code is reading 
                         // HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node node
 

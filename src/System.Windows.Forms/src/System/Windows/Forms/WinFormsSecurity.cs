@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -24,6 +24,8 @@ namespace System.Windows.Forms {
         private static CodeAccessPermission affectMachineState;
         private static CodeAccessPermission affectThreadBehavior;
         private static CodeAccessPermission allPrinting;
+
+#pragma warning disable 433 // CS0433
         private static PermissionSet        allPrintingAndUnmanagedCode; // Can't assert twice in the same method
         private static CodeAccessPermission allWindows;
         private static CodeAccessPermission clipboardRead;
@@ -109,7 +111,7 @@ namespace System.Windows.Forms {
         public static CodeAccessPermission AllPrinting {
             get { 
                 if (allPrinting == null) {
-                    allPrinting = new PrintingPermission(PrintingPermissionLevel.AllPrinting);
+                    allPrinting = PrintingPermission; // new PrintingPermission(PrintingPermissionLevel.AllPrinting);
                 }
                 return allPrinting;
             } 
@@ -204,7 +206,7 @@ namespace System.Windows.Forms {
         public static CodeAccessPermission DefaultPrinting {
             get { 
                 if (defaultPrinting == null) {
-                    defaultPrinting = new PrintingPermission(PrintingPermissionLevel.DefaultPrinting);
+                    defaultPrinting = PrintingPermission; // new(PrintingPermissionLevel.DefaultPrinting);
                 }
                 return defaultPrinting;
             } 
@@ -336,7 +338,7 @@ namespace System.Windows.Forms {
         public static CodeAccessPermission SafePrinting {
             get { 
                 if (safePrinting == null) {
-                    safePrinting = new PrintingPermission(PrintingPermissionLevel.SafePrinting);
+                    safePrinting = PrintingPermission; // new PrintingPermission(PrintingPermissionLevel.SafePrinting);
                 }
                 return safePrinting;
             } 
@@ -426,7 +428,18 @@ namespace System.Windows.Forms {
                 return unmanagedCode;
             } 
         }
-        
+
+        public static CodeAccessPermission PrintingPermission
+        {
+            get
+            {
+                if (unmanagedCode == null)
+                {
+                    unmanagedCode = new SecurityPermission(SecurityPermissionFlag.UnmanagedCode);
+                }
+                return unmanagedCode;
+            }
+        }
         /*
         public static CodeAccessPermission UnrestrictedEnvironment {
             get { 
@@ -437,7 +450,7 @@ namespace System.Windows.Forms {
             } 
         }
         */
-        
+
         public static CodeAccessPermission UnrestrictedWindows {
             get { 
                 if (unrestrictedWindows == null) {

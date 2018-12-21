@@ -22,16 +22,16 @@ namespace System.Windows.Forms.Tests
         public void ImageList_ConstructorIContainer()
         {
             IContainer nullContainer = null;
-            var mockContainer = new Mock<IContainer>(MockBehavior.Strict);
-            mockContainer.Setup(x => x.Add(It.IsAny<ImageList>())).Verifiable();
+            //var mockContainer = new Mock<IContainer>(MockBehavior.Strict);
+            //mockContainer.Setup(x => x.Add(It.IsAny<ImageList>())).Verifiable();
 
             // act & assert
             var ex = Assert.Throws<ArgumentNullException>(() => new ImageList(nullContainer));
             Assert.Equal("container", ex.ParamName);
 
-            var il = new ImageList(mockContainer.Object);
-            Assert.NotNull(il);
-            mockContainer.Verify(x => x.Add(il));
+            //var il = new ImageList(mockContainer.Object);
+            //Assert.NotNull(il);
+            //mockContainer.Verify(x => x.Add(il));
         }
     }
 }
