@@ -5,12 +5,14 @@
 using System.Security.Permissions;
 using System.Collections;
 using System.Runtime.Serialization;
+using System.Security.Permissions.Internal;
 
 namespace System.Security
 {
     [Serializable]
     public partial class PermissionSet : ICollection, IEnumerable, IDeserializationCallback, ISecurityEncodable, IStackWalk
     {
+        public PermissionSet(int state) { }
         public PermissionSet(PermissionState state) { }
         public PermissionSet(PermissionSet permSet) { }
 

@@ -3581,7 +3581,7 @@ namespace System.Windows.Forms {
                     }
                 }
 #if DEBUG
-                new EnvironmentPermission(PermissionState.Unrestricted).Assert();
+                new EnvironmentPermission((int)PermissionState.Unrestricted).Assert();
                 try {
                     callStack = Environment.StackTrace;
                 }

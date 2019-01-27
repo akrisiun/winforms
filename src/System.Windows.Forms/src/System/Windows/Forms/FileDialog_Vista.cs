@@ -39,7 +39,7 @@ namespace System.Windows.Forms
                 {
                     // 
 
-                    new EnvironmentPermission(PermissionState.Unrestricted).Assert();
+                    new EnvironmentPermission((int)PermissionState.Unrestricted).Assert();
                     try
                     {
                         return SystemInformation.BootMode == BootMode.Normal;

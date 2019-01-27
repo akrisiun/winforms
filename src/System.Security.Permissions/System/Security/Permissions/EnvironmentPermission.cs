@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Security.Permissions.Internal;
+
 namespace System.Security.Permissions
 {
     [Serializable]
@@ -9,6 +11,7 @@ namespace System.Security.Permissions
     {
         public EnvironmentPermission(EnvironmentPermissionAccess flag, string pathList) { }
         public EnvironmentPermission(PermissionState state) { }
+        public EnvironmentPermission(int state) { }
         public void AddPathList(EnvironmentPermissionAccess flag, string pathList) { }
         public override IPermission Copy() { return default(IPermission); }
         public override void FromXml(SecurityElement esd) { }

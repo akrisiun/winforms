@@ -1040,7 +1040,7 @@ namespace System.Windows.Forms {
         public static void EnableVisualStyles() {
             string assemblyLoc = null;
             
-            FileIOPermission fiop = new FileIOPermission(PermissionState.None);
+            FileIOPermission fiop = new FileIOPermission((int)PermissionState.None);
             fiop.AllFiles = FileIOPermissionAccess.PathDiscovery;
             fiop.Assert();
             try {
@@ -1195,7 +1195,7 @@ namespace System.Windows.Forms {
                         // 
 
 
-                        FileIOPermission fiop = new FileIOPermission( PermissionState.None );
+                        FileIOPermission fiop = new FileIOPermission( (int)PermissionState.None );
                         fiop.AllFiles = FileIOPermissionAccess.PathDiscovery | FileIOPermissionAccess.Read;
                         fiop.Assert();
 
@@ -1412,7 +1412,7 @@ namespace System.Windows.Forms {
                 // 
 
 
-                new FileIOPermission(PermissionState.Unrestricted).Assert();
+                new FileIOPermission((int)PermissionState.Unrestricted).Assert();
                 try
                 {
                     clrPath = Path.GetDirectoryName(typeof(object).Module.FullyQualifiedName);

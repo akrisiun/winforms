@@ -4,6 +4,7 @@
 
 using System.Security;
 using System.Security.Permissions;
+using System.Security.Permissions.Internal;
 
 namespace System.Net.NetworkInformation
 {

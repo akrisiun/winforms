@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Principal;
 using System.Threading;
+using System.Security.Permissions.Internal;
 
 namespace System.Security.Permissions
 {

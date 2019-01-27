@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+using System.Security.Permissions.Internal;
+
 namespace System.Security.Permissions
 {
     [Serializable]
@@ -10,6 +12,8 @@ namespace System.Security.Permissions
         public FileIOPermission(FileIOPermissionAccess access, string path) { }
         public FileIOPermission(FileIOPermissionAccess access, string[] pathList) { }
         public FileIOPermission(PermissionState state) { }
+        public FileIOPermission(int state) { }
+
         public FileIOPermissionAccess AllFiles { get; set; }
         public FileIOPermissionAccess AllLocalFiles { get; set; }
         public void AddPathList(FileIOPermissionAccess access, string path) { }

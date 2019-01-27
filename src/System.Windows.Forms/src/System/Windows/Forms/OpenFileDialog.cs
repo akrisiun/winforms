@@ -255,7 +255,7 @@ namespace System.Windows.Forms
         {
             get
             {
-                new FileIOPermission(PermissionState.Unrestricted).Assert();
+                new FileIOPermission((int)PermissionState.Unrestricted).Assert();
                 string fullPath = FileName;
                 CodeAccessPermission.RevertAssert();
                 if (string.IsNullOrEmpty(fullPath))
@@ -283,7 +283,7 @@ namespace System.Windows.Forms
         {
             get
             {
-                new FileIOPermission(PermissionState.Unrestricted).Assert();
+                new FileIOPermission((int)PermissionState.Unrestricted).Assert();
                 string[] fullPaths = FileNames;
                 CodeAccessPermission.RevertAssert();
                 if (null == fullPaths || 0 == fullPaths.Length)

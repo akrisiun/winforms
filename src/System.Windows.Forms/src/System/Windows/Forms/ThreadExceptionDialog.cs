@@ -183,7 +183,7 @@ namespace System.Windows.Forms {
             detailsTextBuilder.Append(newline);
             detailsTextBuilder.Append(newline);
             detailsTextBuilder.Append(string.Format(CultureInfo.CurrentCulture, sectionseparator, SR.ExDlgMsgLoadedAssembliesSection));
-            new FileIOPermission(PermissionState.Unrestricted).Assert();
+            new FileIOPermission((int)PermissionState.Unrestricted).Assert();
             try {
                 foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies()) {
                     AssemblyName name = asm.GetName();

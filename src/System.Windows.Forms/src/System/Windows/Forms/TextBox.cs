@@ -194,7 +194,7 @@ namespace System.Windows.Forms {
 
                 if (value != AutoCompleteSource.None && value != AutoCompleteSource.CustomSource)
                 {
-                    FileIOPermission fiop = new FileIOPermission(PermissionState.Unrestricted);
+                    FileIOPermission fiop = new FileIOPermission((int)PermissionState.Unrestricted);
                     fiop.AllFiles = FileIOPermissionAccess.PathDiscovery;
                     fiop.Demand();
                 }

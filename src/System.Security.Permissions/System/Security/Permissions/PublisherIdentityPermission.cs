@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions.Internal;
 
 namespace System.Security.Permissions
 {

@@ -4213,7 +4213,7 @@ namespace System.Windows.Forms {
 
                 // 
 
-                FileIOPermission fiop = new FileIOPermission( PermissionState.None );
+                FileIOPermission fiop = new FileIOPermission( (int)PermissionState.None );
                 fiop.AllFiles = FileIOPermissionAccess.PathDiscovery;
                 fiop.Assert();
 
@@ -4267,7 +4267,7 @@ namespace System.Windows.Forms {
 
                     // 
 
-                    new EnvironmentPermission(PermissionState.Unrestricted).Assert();
+                    new EnvironmentPermission((int)PermissionState.Unrestricted).Assert();
                     try {
                         securitySite = Environment.MachineName;
                     }

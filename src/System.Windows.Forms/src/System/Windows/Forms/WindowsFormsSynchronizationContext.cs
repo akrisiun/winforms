@@ -140,7 +140,7 @@ namespace System.Windows.Forms
                     // 
 
 
-                    new PermissionSet(PermissionState.Unrestricted).Assert();
+                    new PermissionSet((int)PermissionState.Unrestricted).Assert();
                     try {
                         AsyncOperationManager.SynchronizationContext = new WindowsFormsSynchronizationContext();
                     }
@@ -163,7 +163,7 @@ namespace System.Windows.Forms
                 WindowsFormsSynchronizationContext winFormsSyncContext = AsyncOperationManager.SynchronizationContext as WindowsFormsSynchronizationContext;
                 if (winFormsSyncContext != null) {
                     try {
-                        new PermissionSet(PermissionState.Unrestricted).Assert();
+                        new PermissionSet((int)PermissionState.Unrestricted).Assert();
                         if (previousSyncContext == null) {
                             AsyncOperationManager.SynchronizationContext = new SynchronizationContext();
                         }
