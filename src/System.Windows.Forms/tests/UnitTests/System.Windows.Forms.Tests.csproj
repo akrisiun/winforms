@@ -25,6 +25,9 @@
   <ItemGroup>    
     <ProjectReference Include="..\..\..\Moq\Moq\Moq.csproj" />    
     <ProjectReference Include="..\..\src\System.Windows.Forms.csproj" />
+
+    <PackageReference Include="Accessibility" Version="4.6.0-alpha-27309-3" />
+    <PackageReference Include="System.Media.SoundPlayer" Version="4.6.0-alpha-27309-3" />
   </ItemGroup>
 
   <ItemGroup>

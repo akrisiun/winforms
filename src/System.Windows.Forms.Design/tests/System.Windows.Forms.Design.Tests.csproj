@@ -8,6 +8,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\src\System.Windows.Forms.Design.csproj" />
+
+    <PackageReference Include="Microsoft.TestPlatform.TestHost" Version="15.9.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.stafact" Version="0.3.13" />
+
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -8,9 +8,21 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Windows.Forms.Design.Behavior;
+// using System.Windows.Forms.Design.Resources;
+
+namespace System.Drawing.Design.Resources
+{
+    public class SR2
+    {
+        // System.Windows.Forms.Design.Resources.SR
+        internal static global::System.Resources.ResourceManager ResourceManager => SR.ResourceManager;
+    }
+}
 
 namespace System.Windows.Forms.Design
 {
+    using ToolboxItem = System.Object;
+
     /// <summary>
     ///     The ParentControlDesigner class builds on the ControlDesigner.  It adds the ability
     ///     to manipulate child components, and provides a selection UI handler for all
@@ -183,7 +195,7 @@ namespace System.Windows.Forms.Design
         ///     Creates the given tool in the center of the currently selected
         ///     control.  The default size for the tool is used.
         /// </summary>
-        [CLSCompliant(false)]
+        // [CLSCompliant(false)]
         protected void CreateTool(ToolboxItem tool)
         {
             throw new NotImplementedException(SR.NotImplementedByDesign);

@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>System.Drawing.Design</AssemblyName>
+
+    <CLSCompliant>false</CLSCompliant>
+    <SystemDrawingCommonPackageVersion>4.5.1</SystemDrawingCommonPackageVersion>
+    <SystemDrawingDesignPrimitivesPackageVersion>4.6.0-preview1-27018-01</SystemDrawingDesignPrimitivesPackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,6 +14,16 @@
   </ItemGroup>
 
   <ItemGroup>
+     <!-- System.Drawing.Design.Primitives, Version=4.0.0.0, PublicKeyToken=cc7b13ffcd2ddd51
+     Severity	Code	Description	Project	File	Line	Suppression State
+Error	NU1103	Unable to find a stable package Microsoft.DotNet.GenFacades with version 
+  - Found 741 version(s) in dotnet-core [ Nearest version: 1.0.0-beta.18463.1 ]
+  - Found 0 version(s) in nuget.org
+  - Found 0 version(s) in arcade	System.Drawing.Design.Facade	D:\Beta\Visual\winforms\src\System.Drawing.Design\src\System.Drawing.Design.Facade.csproj	1	
+
+     4.6.0-alpha-27309-3 -->
+    <PackageReference Include="Microsoft.DotNet.GenFacades" Version="1.0.0-beta.18463.1" />
+    <PackageReference Include="Microsoft.TargetingPack.NETFramework.v4.7.2" Version="1.0.0" />
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(SystemDrawingDesignPrimitivesPackageVersion)" />
   </ItemGroup>
   

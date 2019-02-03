@@ -28,6 +28,10 @@
 
     <!-- Disable a VS-specific target that is failing when building this csproj -->
     <GenerateDependencyFile>false</GenerateDependencyFile>
+    
+    <MicrosoftWin32RegistryPackageVersion>4.5.0</MicrosoftWin32RegistryPackageVersion>
+    <SystemConfigurationConfigurationManagerPackageVersion>4.5.0</SystemConfigurationConfigurationManagerPackageVersion>
+    <SystemDrawingCommonPackageVersion>4.5.0</SystemDrawingCommonPackageVersion>
 
   </PropertyGroup>
 
@@ -63,7 +67,6 @@
 
     <!-- Reference and Source System.Windows.Forms.Design includes -->
     <ProjectReference Include="..\src\System.Windows.Forms.Design\ref\System.Windows.Forms.Design.Ref.csproj" />
-    <ProjectReference Include="..\src\System.Windows.Forms.Design\src\System.Windows.Forms.Design.csproj" />
     
     <!-- Reference and Source System.Windows.Forms.Design.Editors includes -->
     <ProjectReference Include="..\src\System.Windows.Forms.Design.Editors\ref\System.Windows.Forms.Design.Editors.Ref.csproj" />
@@ -108,9 +111,7 @@
   </Target>
   
   <!-- Look next to each file going into the package for companion files (pdb, xml, resources) -->
-  <Target Name="AddRelativePackageFiles"
-          Inputs="%(TfmSpecificPackageFile.Identity);%(TfmSpecificPackageFile.PackagePath)"
-          Outputs="unused">
+  <Target Name="AddRelativePackageFiles" Inputs="%(TfmSpecificPackageFile.Identity);%(TfmSpecificPackageFile.PackagePath)" Outputs="unused">
     
     <!-- Set some variables for the item group below -->
     <PropertyGroup>
@@ -124,8 +125,7 @@
     <ItemGroup>
 
       <!-- Get pdbs, but not for neither reference binaries nor facade binaries -->
-      <TfmSpecificPackageFile Include="$(_baseDirectory)$(_baseFileName).pdb" 
-                              Condition="Exists('$(_baseDirectory)$(_baseFileName).pdb') And !$(_isReferenceAssembly) And !$(_isFacadeAssembly)">
+      <TfmSpecificPackageFile Include="$(_baseDirectory)$(_baseFileName).pdb" Condition="Exists('$(_baseDirectory)$(_baseFileName).pdb') And !$(_isReferenceAssembly) And !$(_isFacadeAssembly)">
         <PackagePath>$(_packagePath)</PackagePath>
       </TfmSpecificPackageFile>
 

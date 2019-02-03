@@ -33,7 +33,14 @@ namespace System.Drawing.Design
     System.Windows.Forms E:\Beta\mono02\winforms\src\System.Windows.Forms\src\System\Windows\Forms\AxHost.cs	3584	Active
     */
 
-    public enum UITypeEditorEditStyle
+    internal enum UITypeEditorEditStyle
+    {
+        Modaless = 0,
+        Modal = 1,
+        DropDown = 2
+    }
+    
+    public enum UITypeEditorEditStyle48
     {
         Modaless = 0,
         Modal = 1,

@@ -1,37 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
-    <TargetFramework>netcoreapp3.0</TargetFramework>    
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>System.Windows.Forms.Design</AssemblyName>    
     <CLSCompliant>false</CLSCompliant>
+
+    <SystemCodeDomPackageVersion>4.6.0-preview1-27018-01</SystemCodeDomPackageVersion>
+    <!--4.6.0-preview1-27018-01 / 4.6.0-alphautf8string.18530.6 -->
     <SystemDrawingDesignPrimitivesPackageVersion>4.6.0-preview1-27018-01</SystemDrawingDesignPrimitivesPackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningsAsErrors />
+    <NoWarn>1701;1702;3021</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\SR.resx">
       <GenerateSource>true</GenerateSource>
+      <Namespace>System</Namespace>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SR.Designer.cs</LastGenOutput>
-      <Namespace>System.Windows.Forms.Design.Editors.Resources</Namespace>
     </EmbeddedResource>
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Design.Primitives" Version="$(SystemDrawingDesignPrimitivesPackageVersion)" />
+    <!-- 4.6.0-preview1-27018-01 -->
+    <PackageReference Include="System.CodeDom" Version="$(SystemCodeDomPackageVersion)" />
+
+    <!--- Found 183 version(s) in dotnet-core [ Nearest version: 4.6.0-alphautf8string.18530.6 ]-->
+
+    <PackageReference Include="System.Drawing.Design.Primitives" Version="$(SystemDrawingDesignPrimitivesPackageVersion)" />    
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\System.Security.Permissions\System.Security.Permissions.csproj" />
     <ProjectReference Include="..\..\System.Windows.Forms\src\System.Windows.Forms.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\..\Common\src\ApiHelper.cs" Link="Common\ApiHelper.cs" />
   </ItemGroup>
 
   <ItemGroup>

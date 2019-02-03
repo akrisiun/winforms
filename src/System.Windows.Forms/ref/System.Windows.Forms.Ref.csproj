@@ -5,6 +5,12 @@
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <RootNamespace>System.Windows.Forms</RootNamespace>
     <CLSCompliant>true</CLSCompliant>
+
+    <MicrosoftWin32RegistryPackageVersion>4.5.0</MicrosoftWin32RegistryPackageVersion>
+    <SystemConfigurationConfigurationManagerPackageVersion>4.5.0</SystemConfigurationConfigurationManagerPackageVersion>
+    <SystemDrawingCommonPackageVersion>4.6.0-preview1-27018-01</SystemDrawingCommonPackageVersion>
+    <!-- 4.6.0-alpha-27309-3 -->
+    <AccessibilityPackageVersion>4.6.0-alpha-27309-3</AccessibilityPackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

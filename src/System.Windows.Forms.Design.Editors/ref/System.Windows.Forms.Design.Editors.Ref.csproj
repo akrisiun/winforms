@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
     <CLSCompliant>false</CLSCompliant>
+
+    <SystemDrawingCommonPackageVersion>4.5.1</SystemDrawingCommonPackageVersion>
+    <SystemDrawingDesignPrimitivesPackageVersion>4.6.0-preview1-27018-01</SystemDrawingDesignPrimitivesPackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
