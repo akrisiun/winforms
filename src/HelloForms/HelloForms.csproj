@@ -11,13 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\System.Security.Permissions\System.Security.Permissions.csproj" />
+    <!-- <ProjectReference Include="..\System.Security.Permissions\System.Security.Permissions.csproj" />-->
     <ProjectReference Include="..\System.Windows.Forms\src\System.Windows.Forms.csproj" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview1-27018-01" />
+    <PackageReference Include="System.Security.AccessControl" Version="4.6.0-preview.19060.1" />
+    <PackageReference Include="System.Security.Principal.Windows" Version="4.6.0-preview.19060.1" />
 
     <PackageReference Include="Microsoft.NETCore.Runtime.CoreCLR" Version="2.0.8" />
     <PackageReference Include="Microsoft.NETCore.Jit" Version="2.0.8" />
-    <PackageReference Include="System.Security.AccessControl" Version="4.5.0" />
-    <PackageReference Include="System.Security.Principal.Windows" Version="4.5.1" />
 
     <PackageReference Include="System.Data.Common" Version="4.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
@@ -25,7 +26,6 @@
 
     <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-    <PackageReference Include="System.Drawing.Common" Version="4.5.0" />
   </ItemGroup>
 
 </Project>

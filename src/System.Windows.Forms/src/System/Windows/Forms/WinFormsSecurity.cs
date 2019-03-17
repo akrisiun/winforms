@@ -120,7 +120,7 @@ namespace System.Windows.Forms {
         public static PermissionSet AllPrintingAndUnmanagedCode { // Can't assert twice in the same method.
             get {
                 if (allPrintingAndUnmanagedCode == null) {
-                    PermissionSet temp = new PermissionSet((int)PermissionState.None);
+                    PermissionSet temp = new PermissionSet(PermissionState.None);
                     temp.SetPermission(IntSecurity.UnmanagedCode);
                     temp.SetPermission(IntSecurity.AllPrinting);
                     allPrintingAndUnmanagedCode = temp;
@@ -159,7 +159,7 @@ namespace System.Windows.Forms {
         public static PermissionSet ClipboardWrite { // Can't assert OwnClipboard & UnmanagedCode in the same context, need permission set.
             get {
                 if (clipboardWrite == null) {
-                    clipboardWrite = new PermissionSet((int)PermissionState.None);
+                    clipboardWrite = new PermissionSet(PermissionState.None);
                     clipboardWrite.SetPermission(IntSecurity.UnmanagedCode);
                     clipboardWrite.SetPermission(IntSecurity.ClipboardOwn);
                 }
@@ -215,7 +215,7 @@ namespace System.Windows.Forms {
         public static CodeAccessPermission FileDialogCustomization {
             get { 
                 if (fileDialogCustomization == null) {
-                    fileDialogCustomization = new FileIOPermission((int)PermissionState.Unrestricted);
+                    fileDialogCustomization = new FileIOPermission(PermissionState.Unrestricted);
                 }
                 return fileDialogCustomization;
             } 
@@ -374,7 +374,7 @@ namespace System.Windows.Forms {
         public static CodeAccessPermission SensitiveSystemInformation {
             get { 
                 if (sensitiveSystemInformation == null) {
-                    sensitiveSystemInformation = new EnvironmentPermission((int)PermissionState.Unrestricted);
+                    sensitiveSystemInformation = new EnvironmentPermission(PermissionState.Unrestricted);
                 }
                 return sensitiveSystemInformation;
             } 
@@ -496,7 +496,7 @@ namespace System.Windows.Forms {
         internal static string UnsafeGetFullPath(string fileName) {
             string full = fileName;
 
-            FileIOPermission fiop = new FileIOPermission( (int)PermissionState.None );
+            FileIOPermission fiop = new FileIOPermission( PermissionState.None );
             fiop.AllFiles = FileIOPermissionAccess.PathDiscovery;
             fiop.Assert();
             try {

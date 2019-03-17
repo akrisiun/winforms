@@ -2243,7 +2243,7 @@ namespace System.Windows.Forms {
 
             // 
 
-            FileIOPermission fiop = new FileIOPermission((int)PermissionState.Unrestricted);
+            FileIOPermission fiop = new FileIOPermission(PermissionState.Unrestricted);
             fiop.Assert();
             try {
                 System.IO.FileInfo fi;
@@ -2789,7 +2789,7 @@ namespace System.Windows.Forms {
                 
                 // 
 
-                FileIOPermission fiop = new FileIOPermission((int)PermissionState.Unrestricted);
+                FileIOPermission fiop = new FileIOPermission(PermissionState.Unrestricted);
                 fiop.Assert();
                 try {
                     System.IO.FileInfo fi = new System.IO.FileInfo(fileName);
@@ -2891,7 +2891,7 @@ namespace System.Windows.Forms {
                     
                     // 
 
-                    FileIOPermission fiop = new FileIOPermission((int)PermissionState.Unrestricted);
+                    FileIOPermission fiop = new FileIOPermission(PermissionState.Unrestricted);
                     fiop.Assert();
 
                     try {
@@ -4683,8 +4683,8 @@ namespace System.Windows.Forms {
                 // 
 
                 EnvironmentPermission envPermission = new EnvironmentPermission(EnvironmentPermissionAccess.Read, "TEMP");
-                FileIOPermission fiop = new FileIOPermission((int)PermissionState.Unrestricted);
-                var permSet = new System.Security.PermissionSet((int)PermissionState.Unrestricted);
+                FileIOPermission fiop = new FileIOPermission(PermissionState.Unrestricted);
+                var permSet = new System.Security.PermissionSet(PermissionState.Unrestricted);
                 permSet.AddPermission(envPermission);
                 permSet.AddPermission(fiop);
                 permSet.Assert();

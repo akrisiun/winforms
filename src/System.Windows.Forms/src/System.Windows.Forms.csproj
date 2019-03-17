@@ -22,8 +22,14 @@
     <NetPackageVersion>4.5.0</NetPackageVersion>
     <Net46PackageVersion>4.6.0</Net46PackageVersion>
     
+    <NETCorePlatformsVersion>3.0.0-preview.19060.1</NETCorePlatformsVersion>
+    <!-- 3.0.0-preview.18605.1 -->
     <SystemDrawingCommonPackageVersion>4.6.0-preview1-27018-01</SystemDrawingCommonPackageVersion>
     <SystemEventsVersion>4.6.0-preview1-27018-01</SystemEventsVersion>
+	  <SystemSecurityPermissionsPackageVersion>4.6.0-preview.19060.1</SystemSecurityPermissionsPackageVersion>
+    <SystemReflectionEmitVersion>4.6.0-preview.19060.1</SystemReflectionEmitVersion>
+
+
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -33,10 +39,11 @@
 
   <ItemGroup>
     <!-- 4.6.0-alpha-27220-8 -->
+
     <PackageReference Include="Accessibility" Version="4.6.0-alpha-27309-3" />
     <PackageReference Include="System.Media.SoundPlayer" Version="4.6.0-alpha-27309-3" />
     <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview-27205-02" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview.18605.1" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="$(NETCorePlatformsVersion)" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
 
     <PackageReference Include="Microsoft.Win32.Registry" Version="$(NetPackageVersion)" />
@@ -46,7 +53,6 @@
     
     <PackageReference Include="System.Security.Cryptography.Cng" Version="$(NetPackageVersion)" />
 
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
     <!--
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(NetPackageVersion)" />
 
@@ -54,8 +60,6 @@
     <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
     <PackageReference Include="Accessibility" Version="[4.6.0-alpha-27220-8,]" />
     <PackageReference Include="System.Media.SoundPlayer" Version="[4.6.0-alpha-27220-8,]" />
-
-    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
     -->
   </ItemGroup>
 
@@ -740,7 +744,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!--
     <ProjectReference Include="..\..\System.Security.Permissions\System.Security.Permissions.csproj" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    error CS0433: The type 'PermissionSet' exists in both System.Runtime.Extensions and System.Security.Permissions
+    error CS0433: The type 'PermissionSet' exists in both 'System.Runtime.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
+    and 'System.Security.Permissions, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+	-->
+    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
   </ItemGroup>
 
   <ItemGroup>

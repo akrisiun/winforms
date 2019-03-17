@@ -5,6 +5,7 @@
 
 namespace System.Security.Permissions
 {
+    /* some Workaraounds
     using System.Security.Permissions.Internal;
 
     public enum PermissionState
@@ -12,6 +13,7 @@ namespace System.Security.Permissions
         None = System.Security.Permissions.Internal.PermissionState.None,
         Unrestricted = System.Security.Permissions.Internal.PermissionState.Unrestricted
     }
+    */
 }
 
 #if WINFORMS_NAMESPACE
@@ -76,7 +78,7 @@ namespace System.Windows.Forms
 
         [SecuritySafeCritical]
         private static void DemandGrantSet(Assembly assembly) {
-            PermissionSet targetGrantSet = new PermissionSet((int)PermissionState.None); //assembly.PermissionSet;
+            PermissionSet targetGrantSet = new PermissionSet(PermissionState.None); //assembly.PermissionSet;
             targetGrantSet.AddPermission(RestrictedMemberAccessPermission);
             targetGrantSet.Demand();
         }

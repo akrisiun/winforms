@@ -904,7 +904,7 @@ namespace System.Windows.Forms {
             internal NativeImageList(IntPtr himl) {
                 this.himl = himl;
 #if DEBUG
-                new EnvironmentPermission((int)PermissionState.Unrestricted).Assert();
+                new EnvironmentPermission(PermissionState.Unrestricted).Assert();
                 try {
                     callStack = Environment.StackTrace;
                 }

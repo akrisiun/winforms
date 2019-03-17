@@ -17710,7 +17710,7 @@ example usage
 
 
 
-                            new PermissionSet((int)PermissionState.Unrestricted).Assert();
+                            new PermissionSet(PermissionState.Unrestricted).Assert();
                             try {
                                 MethodInfo method = typeof(SystemEvents).GetMethod("Shutdown",
                                                                                   BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod,
@@ -17781,7 +17781,7 @@ example usage
                         //
                         // 
 
-                        new PermissionSet((int)PermissionState.Unrestricted).Assert();
+                        new PermissionSet(PermissionState.Unrestricted).Assert();
                         try {
                             MethodInfo method = typeof(SystemEvents).GetMethod("Startup",
                                                                               BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.InvokeMethod,
@@ -19792,7 +19792,7 @@ example usage
 
                     // 
 
-                    FileIOPermission fiop = new FileIOPermission( (int)PermissionState.None );
+                    FileIOPermission fiop = new FileIOPermission( PermissionState.None );
                     fiop.AllFiles = FileIOPermissionAccess.PathDiscovery;
                     fiop.Assert();
                     try {
