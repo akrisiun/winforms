@@ -18,17 +18,18 @@
 
     <!--0-preview1-27018-01-->
     <LibPackageVersion>3.0.0-preview1-27018-01</LibPackageVersion>
-    <LibCorePackageVersion>3.0.0-preview-27205-02</LibCorePackageVersion>
+    <LibCorePackageVersion>3.0.0-preview7.19281.6</LibCorePackageVersion>
     <NetPackageVersion>4.5.0</NetPackageVersion>
     <Net46PackageVersion>4.6.0</Net46PackageVersion>
-    
-    <NETCorePlatformsVersion>3.0.0-preview.19060.1</NETCorePlatformsVersion>
-    <!-- 3.0.0-preview.18605.1 -->
-    <SystemDrawingCommonPackageVersion>4.6.0-preview1-27018-01</SystemDrawingCommonPackageVersion>
-    <SystemEventsVersion>4.6.0-preview1-27018-01</SystemEventsVersion>
-	  <SystemSecurityPermissionsPackageVersion>4.6.0-preview.19060.1</SystemSecurityPermissionsPackageVersion>
-    <SystemReflectionEmitVersion>4.6.0-preview.19060.1</SystemReflectionEmitVersion>
+    <!--dotnet add package Microsoft.Windows.Compatibility -version 3.0.0-preview6.19303.8 -->
 
+    <NETCorePlatformsVersion>3.0.0-preview7.19281.6</NETCorePlatformsVersion>
+    <!-- 3.0.0-preview.18605.1 | 6.19303.8 -->
+    <SystemDrawingCommonPackageVersion>4.6.0-preview7.19281.6</SystemDrawingCommonPackageVersion>
+    <!--7.19281.6-->
+    <SystemEventsVersion>4.6.0-preview7.19281.6</SystemEventsVersion>
+	  <SystemSecurityPermissionsPackageVersion>4.6.0-preview7.19281.6</SystemSecurityPermissionsPackageVersion>
+    <SystemReflectionEmitVersion>4.6.0-preview7.19281.6</SystemReflectionEmitVersion>
 
   </PropertyGroup>
 
@@ -40,22 +41,26 @@
   <ItemGroup>
     <!-- 4.6.0-alpha-27220-8 -->
 
-    <PackageReference Include="Accessibility" Version="4.6.0-alpha-27309-3" />
-    <PackageReference Include="System.Media.SoundPlayer" Version="4.6.0-alpha-27309-3" />
-    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview-27205-02" />
+    <PackageReference Include="Accessibility" Version="4.6.0-preview6.19303.8" />
+    <PackageReference Include="System.Media.SoundPlayer" Version="4.6.0preview6.19303.8" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview6.19303.8" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="$(NETCorePlatformsVersion)" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
 
     <PackageReference Include="Microsoft.Win32.Registry" Version="$(NetPackageVersion)" />
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="$(SystemEventsVersion)" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(NetPackageVersion)" />
-    <PackageReference Include="System.Drawing.Common" Version="$(SystemDrawingCommonPackageVersion)" />
-    
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview8.19356.5" />
+    <!-- 4.6.0-preview6.19303.8 -->
+    <!--<PackageReference Include="System.Drawing.Common" Version="4.6.0-preview6.19303.8" />-->
+    <!--4.5.1
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />-->
+
+    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
     <PackageReference Include="System.Security.Cryptography.Cng" Version="$(NetPackageVersion)" />
 
     <!--
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(NetPackageVersion)" />
-
     <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
     <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
     <PackageReference Include="Accessibility" Version="[4.6.0-alpha-27220-8,]" />
@@ -751,7 +756,6 @@
     error CS0433: The type 'PermissionSet' exists in both 'System.Runtime.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
     and 'System.Security.Permissions, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
 	-->
-    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
   </ItemGroup>
 
   <ItemGroup>
@@ -759,6 +763,387 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ArrangedElement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\AxHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\BindingNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\BindingSource.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\CheckedListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ColorDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ColumnHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\CommonDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Control.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridBoolColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridTextBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewAccessibleObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewComboBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewControlCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewDataConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DatagridviewDisplayedBandsData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewHitTestInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewLayoutData.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewMethods.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewTextBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DataGridViewTopRowAccessibleObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Design\ComponentEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Design\ComponentEditorPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\DomainUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ErrorProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\FileDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\FileDialog_Vista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\FlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\FolderBrowserDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\FontDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\HelpProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\HScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\LinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ListControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MainMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MaskedTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MDIClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MDIControlStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MDIWindowDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MdiWindowListStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Menu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\MonthCalendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\NotifyIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\OpenFileDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Printing\PageSetupDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Printing\PrintDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Printing\PrintPreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Printing\PrintPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGridInternal\DropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGridInternal\GridErrorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGridInternal\GridToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGridInternal\HotCommands.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\PropertyGridInternal\PropertyGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\SaveFileDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\SplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\SplitterPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\StatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\StatusBarPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TextBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ThreadExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\Timer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolBarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripContentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripControlHost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripDropDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripDropDownItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripDropDownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripGrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripOverflow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripOverflowButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripPanelCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripPanelRow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripScrollButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripStatusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolStripTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\ToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\UpDownBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\VScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\WebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="System\Windows\Forms\WebBrowserBase.cs">
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
 </Project>
