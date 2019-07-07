@@ -26,11 +26,13 @@ namespace System.Windows.Forms {
         private static CodeAccessPermission allPrinting;
 
 #pragma warning disable 433 // CS0433
-        private static PermissionSet        allPrintingAndUnmanagedCode; // Can't assert twice in the same method
+        // PermissionSet
+        private static PermissionSet allPrintingAndUnmanagedCode; // Can't assert twice in the same method
+        private static PermissionSet clipboardWrite; // Can't assert twice in the same method
+
         private static CodeAccessPermission allWindows;
         private static CodeAccessPermission clipboardRead;
         private static CodeAccessPermission clipboardOwn;
-        private static PermissionSet        clipboardWrite; // Can't assert twice in the same method
         private static CodeAccessPermission changeWindowRegionForTopLevel;
         private static CodeAccessPermission controlFromHandleOrLocation;
         private static CodeAccessPermission createAnyWindow;
@@ -159,9 +161,9 @@ namespace System.Windows.Forms {
         public static PermissionSet ClipboardWrite { // Can't assert OwnClipboard & UnmanagedCode in the same context, need permission set.
             get {
                 if (clipboardWrite == null) {
-                    clipboardWrite = new PermissionSet(PermissionState.None);
-                    clipboardWrite.SetPermission(IntSecurity.UnmanagedCode);
-                    clipboardWrite.SetPermission(IntSecurity.ClipboardOwn);
+                    clipboardWrite = new PermissionSet( PermissionState.None);
+                    clipboardWrite.AddPermission(IntSecurity.UnmanagedCode);
+                    clipboardWrite.AddPermission(IntSecurity.ClipboardOwn);
                 }
                 return clipboardWrite;
             } 

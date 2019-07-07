@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -12,7 +12,7 @@ namespace System.Drawing.Design
     /// Provides an editor that can perform default file searching for bitmap (.bmp)
     /// files.
     ///</summary>
-    // [CLSCompliant(false)]
+    [CLSCompliant(false)]
     public class BitmapEditor : ImageEditor
     {
         protected static List<string> BitmapExtensions = new List<string>() { "bmp", "gif", "jpg", "jpeg", "png", "ico" };

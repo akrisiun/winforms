@@ -1,19 +1,17 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
 
 namespace System.Security.Permissions
 {
-    /* some Workaraounds
-    using System.Security.Permissions.Internal;
+    //using System.Security.Permissions.Internal;
 
-    public enum PermissionState
-    {
-        None = System.Security.Permissions.Internal.PermissionState.None,
-        Unrestricted = System.Security.Permissions.Internal.PermissionState.Unrestricted
-    }
-    */
+    //public enum PermissionState
+    //{
+    //    None = System.Security.Permissions.Internal.PermissionState.None,
+    //    Unrestricted = System.Security.Permissions.Internal.PermissionState.Unrestricted
+    //}
 }
 
 #if WINFORMS_NAMESPACE
@@ -78,7 +76,7 @@ namespace System.Windows.Forms
 
         [SecuritySafeCritical]
         private static void DemandGrantSet(Assembly assembly) {
-            PermissionSet targetGrantSet = new PermissionSet(PermissionState.None); //assembly.PermissionSet;
+            PermissionSet targetGrantSet = new PermissionSet((int)PermissionState.None); //assembly.PermissionSet;
             targetGrantSet.AddPermission(RestrictedMemberAccessPermission);
             targetGrantSet.Demand();
         }

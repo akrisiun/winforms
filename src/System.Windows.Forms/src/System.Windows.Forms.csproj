@@ -12,25 +12,16 @@
     <PreReleaseLabel>beta</PreReleaseLabel>
     <PackageVersion Condition="'$(PackageVersion)' == ''">4.8.0</PackageVersion>
     <Version>4.8.0</Version>
-    <AssemblyVersion>4.8.0.1221</AssemblyVersion>
+    <AssemblyVersion>4.8.0.19707</AssemblyVersion>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mono.snk</AssemblyOriginatorKeyFile>
 
-    <!--0-preview1-27018-01-->
-    <LibPackageVersion>3.0.0-preview1-27018-01</LibPackageVersion>
-    <LibCorePackageVersion>3.0.0-preview7.19281.6</LibCorePackageVersion>
-    <NetPackageVersion>4.5.0</NetPackageVersion>
+    <LibPackageVersion>4.6.0-alpha-27220-8</LibPackageVersion>
+    <!--preview.19054.1-->
+    <LibCorePackageVersion>3.0.0-preview-27205-02</LibCorePackageVersion>
+    <NetPackageVersion>4.6.0-preview4.19118.6</NetPackageVersion>
     <Net46PackageVersion>4.6.0</Net46PackageVersion>
-    <!--dotnet add package Microsoft.Windows.Compatibility -version 3.0.0-preview6.19303.8 -->
-
-    <NETCorePlatformsVersion>3.0.0-preview7.19281.6</NETCorePlatformsVersion>
-    <!-- 3.0.0-preview.18605.1 | 6.19303.8 -->
-    <SystemDrawingCommonPackageVersion>4.6.0-preview7.19281.6</SystemDrawingCommonPackageVersion>
-    <!--7.19281.6-->
-    <SystemEventsVersion>4.6.0-preview7.19281.6</SystemEventsVersion>
-	  <SystemSecurityPermissionsPackageVersion>4.6.0-preview7.19281.6</SystemSecurityPermissionsPackageVersion>
-    <SystemReflectionEmitVersion>4.6.0-preview7.19281.6</SystemReflectionEmitVersion>
-
+    <!--<WarningsNotAsErrors>CS0433</WarningsNotAsErrors>-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -40,31 +31,61 @@
 
   <ItemGroup>
     <!-- 4.6.0-alpha-27220-8 -->
-
-    <PackageReference Include="Accessibility" Version="4.6.0-preview6.19303.8" />
-    <PackageReference Include="System.Media.SoundPlayer" Version="4.6.0preview6.19303.8" />
-    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview6.19303.8" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="$(NETCorePlatformsVersion)" />
+    <PackageReference Include="Accessibility" Version="$(LibPackageVersion)" />
+    <PackageReference Include="System.Media.SoundPlayer" Version="$(LibPackageVersion)" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview4-27413-10" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19118.6" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
 
     <PackageReference Include="Microsoft.Win32.Registry" Version="$(NetPackageVersion)" />
-    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="$(SystemEventsVersion)" />
+    <PackageReference Include="Microsoft.Win32.SystemEvents" Version="$(NetPackageVersion)" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(NetPackageVersion)" />
-    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview8.19356.5" />
-    <!-- 4.6.0-preview6.19303.8 -->
-    <!--<PackageReference Include="System.Drawing.Common" Version="4.6.0-preview6.19303.8" />-->
-    <!--4.5.1
-    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />-->
-
-    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
+    
     <PackageReference Include="System.Security.Cryptography.Cng" Version="$(NetPackageVersion)" />
+    <PackageReference Include="System.Security.Permissions" Version="4.6.0-preview4.19118.6" /> 
+    <!--<PackageReference Include="System.Drawing.Common" Version="4.5.1" /> -->
 
+    <!--.nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Security.Cryptography.Primitives.dll -->	  
+    
+    <PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />
+    <!-- -->
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />
+    
     <!--
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="3.0.0-preview5-27626-15" />
+
+    .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll
+                 HintPath = 'C:\Users\akris\.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll'
+    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll
+    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll
+    Primary reference "System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51".
+        .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll".
+    Primary reference "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll".
+    Primary reference "System.Drawing.Primitives, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll".
+
+.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll
+                 HintPath = 'C:\Users\akris\.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll'
+    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll
+    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll
+    Primary reference "System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51".
+        .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll".
+    Primary reference "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll".
+    Primary reference "System.Drawing.Primitives, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll".
+    -->
+    <!--
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(NetPackageVersion)" />
-    <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
+
     <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
     <PackageReference Include="Accessibility" Version="[4.6.0-alpha-27220-8,]" />
     <PackageReference Include="System.Media.SoundPlayer" Version="[4.6.0-alpha-27220-8,]" />
+
+    <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
     -->
   </ItemGroup>
 
@@ -746,16 +767,6 @@
     <EmbeddedResource Include="Resources\System\Windows\Forms\ToolStrip\blanktoolStrip.bmp">
       <LogicalName>System.Windows.Forms.blank.bmp</LogicalName>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <!--
-    <ProjectReference Include="..\..\System.Security.Permissions\System.Security.Permissions.csproj" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
-    error CS0433: The type 'PermissionSet' exists in both System.Runtime.Extensions and System.Security.Permissions
-    error CS0433: The type 'PermissionSet' exists in both 'System.Runtime.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 
-    and 'System.Security.Permissions, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
-	-->
   </ItemGroup>
 
   <ItemGroup>

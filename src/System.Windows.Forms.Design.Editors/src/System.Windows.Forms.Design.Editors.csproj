@@ -4,19 +4,11 @@
     <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
     <TargetFramework>netcoreapp3.0</TargetFramework>    
     <CLSCompliant>false</CLSCompliant>
-    <SystemDrawingDesignPrimitivesPackageVersion>4.6.0-preview1-27018-01</SystemDrawingDesignPrimitivesPackageVersion>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <WarningsAsErrors />
   </PropertyGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\SR.resx">
       <GenerateSource>true</GenerateSource>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SR.Designer.cs</LastGenOutput>
       <Namespace>System.Windows.Forms.Design.Editors.Resources</Namespace>
     </EmbeddedResource>
   </ItemGroup>
@@ -26,20 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\System.Security.Permissions\System.Security.Permissions.csproj" />
     <ProjectReference Include="..\..\System.Windows.Forms\src\System.Windows.Forms.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\..\Common\src\ApiHelper.cs" Link="Common\ApiHelper.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\SR.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>SR.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>
