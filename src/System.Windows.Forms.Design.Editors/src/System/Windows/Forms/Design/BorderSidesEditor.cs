@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -15,7 +15,7 @@ namespace System.Windows.Forms.Design
     ///     Provides an editor for setting the ToolStripStatusLabel BorderSides property..
     /// </summary>
     [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-    [CLSCompliant(false)]
+    // [CLSCompliant(false)]
     public class BorderSidesEditor : UITypeEditor
     {
         private BorderSidesEditorUI borderSidesEditorUI;
@@ -134,7 +134,7 @@ namespace System.Windows.Forms.Design
                 // 
                 resources.ApplyResources(tableLayoutPanel1, "tableLayoutPanel1");
                 tableLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-                tableLayoutPanel1.BackColor = SystemColors.Window;
+                tableLayoutPanel1.BackColor = SystemColorsForms.Window;
                 tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
                 tableLayoutPanel1.Controls.Add(noneCheckBox, 0, 0);
                 tableLayoutPanel1.Controls.Add(allCheckBox, 0, 2);
@@ -192,7 +192,7 @@ namespace System.Windows.Forms.Design
                 // splitterLabel
                 // 
                 resources.ApplyResources(splitterLabel, "splitterLabel");
-                splitterLabel.BackColor = SystemColors.ControlDark;
+                splitterLabel.BackColor = SystemColorsForms.ControlDark;
                 splitterLabel.Name = "splitterLabel";
                 // 
                 // Control

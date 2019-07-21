@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -17,7 +17,7 @@ namespace System.Drawing.Design
     /// <summary>
     /// Provides an editor for visually picking an image.
     /// </summary>
-    [CLSCompliant(false)]
+    // [CLSCompliant(false)]
     public class ImageEditor : UITypeEditor
     {
         internal static Type[] imageExtenders = new Type[] { typeof(BitmapEditor), /*gpr typeof(Icon),*/ typeof(MetafileEditor) };
@@ -162,8 +162,9 @@ namespace System.Drawing.Design
         /// </summary>
         [SuppressMessage("Microsoft.Security", "CA2109:ReviewVisibleEventHandlers")] //Benign code
         [SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")] // everything in this assembly is full trust.
-        public override void PaintValue(PaintValueEventArgs e)
+        public void PaintValueForms(EventArgs ee)
         {
+            var e = ee as PaintValueEventArgs;
             Image image = e.Value as Image;
             if (image != null)
             {
@@ -174,6 +175,9 @@ namespace System.Drawing.Design
                 e.Graphics.DrawImage(image, e.Bounds);
             }
         }
+
+        public override void PaintValue(PaintValueEventArgs e)
+            => PaintValueForms(e);
     }
 }
 

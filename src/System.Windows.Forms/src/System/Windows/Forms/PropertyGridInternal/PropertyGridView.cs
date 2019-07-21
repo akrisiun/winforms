@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -5772,7 +5772,7 @@ namespace System.Windows.Forms.PropertyGridInternal {
 
                     // Draw the divider
                     int y = resizeUp ? (ResizeBarSize - 1) : (Height - ResizeBarSize);
-                    Pen pen = new Pen(SystemColors.ControlDark, 1);
+                    Pen pen = new Pen(SystemColorsForms.ControlDark, 1);
                     pen.DashStyle = DashStyle.Solid;
                     pe.Graphics.DrawLine(pen, 0, y, Width, y);
                     pen.Dispose();

@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -17134,7 +17134,8 @@ namespace System.Windows.Forms
                 {
                     if (SystemInformation.HighContrast)
                     {
-                        ControlPaint.DrawHighContrastFocusRectangle(g, this.GetGridFocusRectangle(), SystemColors.ActiveCaptionText);
+                        ControlPaint.DrawHighContrastFocusRectangle(g, 
+                            this.GetGridFocusRectangle(), SystemColorsForms.ActiveCaptionText);
                     }
                     else
                     {
@@ -19855,7 +19856,7 @@ namespace System.Windows.Forms
                 }
                 else if (this.BorderStyle == BorderStyle.FixedSingle)
                 {
-                    Pen pen = GetCachedPen(SystemColors.ControlText);
+                    Pen pen = GetCachedPen(SystemColorsForms.ControlText);
                     g.DrawRectangle(pen, new Rectangle(0, 0, bounds.Width - 1, bounds.Height - 1));
                 }
                 else

@@ -16,7 +16,7 @@ namespace System.Windows.Forms.Tests
             var pb = new ProgressBar();
 
             Assert.NotNull(pb);
-            Assert.Equal(SystemColors.Highlight, pb.ForeColor);
+            Assert.Equal(SystemColorsForms.Highlight, pb.ForeColor);
         }
     }
 }

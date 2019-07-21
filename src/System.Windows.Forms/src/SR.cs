@@ -52,5 +52,13 @@ namespace System
         }
 
         public static string GetResourceString(string Description) => GetString(Description) ?? Description;
+
+        public static string GetResourceStringNull(string Description) { 
+            string resourceObject = null;
+            try
+            { resourceObject = ResourceManager.GetString(Description); }
+            catch (MissingManifestResourceException) { }
+            return resourceObject;
+        }
     }
 }

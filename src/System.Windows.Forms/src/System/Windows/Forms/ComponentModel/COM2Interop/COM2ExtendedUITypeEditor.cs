@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -85,7 +85,7 @@ namespace System.Drawing.Design {
         ///      canvas.  Painting should be done within the boundaries of the
         ///      provided rectangle.
         /// </devdoc>
-        public override void PaintValue(PaintValueEventArgs e) {
+        public override void PaintValue(PaintValueEventArgsForms e) {
             if (innerEditor != null) {
                innerEditor.PaintValue(e);
             }

@@ -4,6 +4,9 @@
     <AssemblyName>System.Windows.Forms.Design.Editors</AssemblyName>
     <TargetFramework>netcoreapp3.0</TargetFramework>    
     <CLSCompliant>false</CLSCompliant>
+    <!--<SystemDrawingDesignPrimitivesPackageVersion>4.3.0</SystemDrawingDesignPrimitivesPackageVersion>-->
+    <SystemDrawingDesignPrimitivesPackageVersion>4.6.0-alphautf8string.18530.6</SystemDrawingDesignPrimitivesPackageVersion>
+    <!-- 4.6.0-alpha.18530.6  |  4.6.0-alphautf8string.18530.6 -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,7 +17,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Design.Primitives" Version="$(SystemDrawingDesignPrimitivesPackageVersion)" />
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />
+    <!-- -->
+    <PackageReference Include="System.Drawing.Design.Primitives" Version="$(SystemDrawingDesignPrimitivesPackageVersion)">
+      <NoWarn></NoWarn>
+      <GeneratePathProperty>false</GeneratePathProperty>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -26,3 +34,4 @@
   </ItemGroup>
 
 </Project>
+

@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -19,7 +19,7 @@ namespace System.Drawing.Design
     /// <summary>
     ///     Provides an editor for visually picking a color.
     /// </summary>
-    [CLSCompliant(false)]
+    // [CLSCompliant(false)]
     public class ColorEditor : UITypeEditor
     {
         private ColorUI colorUI;
@@ -161,7 +161,7 @@ namespace System.Drawing.Design
                 this.colorUI = colorUI;
                 SetStyle(ControlStyles.Opaque, true);
 
-                BackColor = SystemColors.Control;
+                BackColor = SystemColorsForms.Control;
 
                 Size = new Size(CELLS_ACROSS * (cellSizeX + marginX) + marginX + 2,
                                 CELLS_DOWN * (cellSizeY + marginY) + marginY + 2);
@@ -489,20 +489,20 @@ namespace System.Drawing.Design
 
                         if (cur.Equals(SelectedColor) && !drawSelected)
                         {
-                            ControlPaint.DrawBorder(g, Rectangle.Inflate(rect, 3, 3), SystemColors.ControlText, ButtonBorderStyle.Solid);
+                            ControlPaint.DrawBorder(g, Rectangle.Inflate(rect, 3, 3), SystemColorsForms.ControlText, ButtonBorderStyle.Solid);
                             drawSelected = true;
                         }
 
                         if (focus.X == x && focus.Y == y && Focused)
                         {
-                            ControlPaint.DrawFocusRectangle(g, Rectangle.Inflate(rect, 5, 5), SystemColors.ControlText, SystemColors.Control);
+                            ControlPaint.DrawFocusRectangle(g, Rectangle.Inflate(rect, 5, 5), SystemColorsForms.ControlText, SystemColorsForms.Control);
                         }
 
                         ControlPaint.DrawBorder(g, Rectangle.Inflate(rect, 2, 2),
-                                                SystemColors.Control, 2, ButtonBorderStyle.Inset,
-                                                SystemColors.Control, 2, ButtonBorderStyle.Inset,
-                                                SystemColors.Control, 2, ButtonBorderStyle.Inset,
-                                                SystemColors.Control, 2, ButtonBorderStyle.Inset);
+                                                SystemColorsForms.Control, 2, ButtonBorderStyle.Inset,
+                                                SystemColorsForms.Control, 2, ButtonBorderStyle.Inset,
+                                                SystemColorsForms.Control, 2, ButtonBorderStyle.Inset,
+                                                SystemColorsForms.Control, 2, ButtonBorderStyle.Inset);
                         PaintValue(cur, g, rect);
                     }
                 }
@@ -728,7 +728,7 @@ namespace System.Drawing.Design
             /// <summary> 
             /// Array of system colors.
             /// </summary>
-            private object[] SystemColorValues => systemColorConstants ?? (systemColorConstants = GetConstants(typeof(SystemColors)));
+            private object[] SystemColorValues => systemColorConstants ?? (systemColorConstants = GetConstants(typeof(SystemColorsForms)));
 
             public object Value => value;
 

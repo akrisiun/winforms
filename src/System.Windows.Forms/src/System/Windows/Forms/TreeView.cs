@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -1933,16 +1933,16 @@ namespace System.Windows.Forms {
 
             Color c;
             c = BackColor;
-            if (c != SystemColors.Window)
-                SendMessage(NativeMethods.TVM_SETBKCOLOR, 0, ColorTranslator.ToWin32(c));
+            if (c != SystemColorsForms.Window)
+                SendMessage(NativeMethods.TVM_SETBKCOLOR, 0, ColorTranslatorForms.ToWin32(c));
             c = ForeColor;
 
-            if (c != SystemColors.WindowText)
-                SendMessage(NativeMethods.TVM_SETTEXTCOLOR, 0, ColorTranslator.ToWin32(c));
+            if (c != SystemColorsForms.WindowText)
+                SendMessage(NativeMethods.TVM_SETTEXTCOLOR, 0, ColorTranslatorForms.ToWin32(c));
 
             /// put the linecolor into the native control only if Set ...
             if (lineColor != Color.Empty) {
-                SendMessage(NativeMethods.TVM_SETLINECOLOR, 0, ColorTranslator.ToWin32(lineColor));
+                SendMessage(NativeMethods.TVM_SETLINECOLOR, 0, ColorTranslatorForms.ToWin32(lineColor));
             }
 
             if (imageList != null)
@@ -2762,13 +2762,16 @@ namespace System.Windows.Forms {
                                 TreeNodeStates curState = e.State;
 
                                 Font font = (node.NodeFont != null) ? node.NodeFont : node.TreeView.Font;
-                                Color color = (((curState & TreeNodeStates.Selected) == TreeNodeStates.Selected) && node.TreeView.Focused) ? SystemColors.HighlightText : (node.ForeColor != Color.Empty) ? node.ForeColor : node.TreeView.ForeColor;
+                                Color color = (((curState & TreeNodeStates.Selected) == TreeNodeStates.Selected) 
+                                    && node.TreeView.Focused) ? SystemColorsForms.HighlightText 
+                                    : (node.ForeColor != Color.Empty) ? node.ForeColor : node.TreeView.ForeColor;
 
                                 // Draw the actual node.
                                 if ((curState & TreeNodeStates.Selected) == TreeNodeStates.Selected)
                                 {
                                 	g.FillRectangle(SystemBrushes.Highlight, bounds);
-                                	ControlPaint.DrawFocusRectangle(g, bounds, color, SystemColors.Highlight);
+                                	ControlPaint.DrawFocusRectangle(g, bounds, color, 
+                                        SystemColorsForms.Highlight);
                                 	TextRenderer.DrawText(g, e.Node.Text, font, bounds, color, TextFormatFlags.Default);
                                 }
                                 else

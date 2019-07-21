@@ -12,7 +12,9 @@
     <PreReleaseLabel>beta</PreReleaseLabel>
     <PackageVersion Condition="'$(PackageVersion)' == ''">4.8.0</PackageVersion>
     <Version>4.8.0</Version>
-    <AssemblyVersion>4.8.0.19707</AssemblyVersion>
+    <AssemblyVersion>4.8.0.19721</AssemblyVersion>
+    <PackageVersion>4.8.0.19721-dev5</PackageVersion>
+	
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mono.snk</AssemblyOriginatorKeyFile>
 
@@ -47,7 +49,7 @@
 
     <!--.nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Security.Cryptography.Primitives.dll -->	  
     
-    <PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />
+    <!--<PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />-->
     <!-- -->
     <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />
     

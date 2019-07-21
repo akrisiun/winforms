@@ -47,7 +47,13 @@ namespace System.Drawing.Design
         DropDown = 2
     }
 
-    public class PaintValueEventArgs : EventArgs
+    public class PaintValueEventArgsForms : EventArgs {
+        public PaintValueEventArgsForms(params object[] args) 
+            // : base(args) 
+        { }
+    }
+
+    class PaintValueEventArgs : EventArgs
     {
         public PaintValueEventArgs(params object[] args)
         {
@@ -64,7 +70,7 @@ namespace System.Drawing.Design
 
         public virtual bool GetPaintValueSupported(ITypeDescriptorContext context) => false;
 
-        public virtual void PaintValue(PaintValueEventArgs e) { }
+        public virtual void PaintValue(PaintValueEventArgsForms e) { }
 
         // 
         public bool IsDropDownResizable { get; set; }

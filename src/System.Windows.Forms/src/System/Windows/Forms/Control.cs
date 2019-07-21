@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -15902,7 +15902,7 @@ example usage
                             if (obj != null) {
                                 try {
                                     Debug.WriteLineIf(CompModSwitches.ActiveX.TraceInfo, "Object color type=" + obj.GetType().FullName);
-                                    prop.Value = ColorTranslator.FromOle(Convert.ToInt32(obj, CultureInfo.InvariantCulture));
+                                    prop.Value = ColorTranslatorForms.FromOle(Convert.ToInt32(obj, CultureInfo.InvariantCulture));
                                 }
                                 catch (Exception e) {
                                     Debug.Fail("Failed to massage ambient back color to a Color", e.ToString());
@@ -17183,10 +17183,10 @@ example usage
                 // Hookup our ambient colors
                 //
                 AmbientProperty prop = LookupAmbient(NativeMethods.ActiveX.DISPID_AMBIENT_BACKCOLOR);
-                prop.Value = ColorTranslator.FromOle(unchecked((int)pQaContainer.colorBack));
+                prop.Value = ColorTranslatorForms.FromOle(unchecked((int)pQaContainer.colorBack));
 
                 prop = LookupAmbient(NativeMethods.ActiveX.DISPID_AMBIENT_FORECOLOR);
-                prop.Value = ColorTranslator.FromOle(unchecked((int)pQaContainer.colorFore));
+                prop.Value = ColorTranslatorForms.FromOle(unchecked((int)pQaContainer.colorFore));
 
                 // And our ambient font
                 //

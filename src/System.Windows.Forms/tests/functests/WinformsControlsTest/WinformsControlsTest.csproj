@@ -13,56 +13,127 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Buttons.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Buttons.Designer.cs">
       <DependentUpon>Buttons.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Calendar.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Calendar.Designer.cs">
       <DependentUpon>Calendar.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ComboBoxes.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="ComboBoxes.Designer.cs">
       <DependentUpon>ComboBoxes.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CurrentDPILabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGridViewHeaders.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="DataGridViewHeaders.Designer.cs">
       <DependentUpon>DataGridViewHeaders.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DateTimePicker.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="DateTimePicker.Designer.cs">
       <DependentUpon>DateTimePicker.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DesignTimeAligned.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="DesignTimeAligned.Designer.cs">
       <DependentUpon>DesignTimeAligned.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ListViewTest.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="ListViewTest.Designer.cs">
       <DependentUpon>ListViewTest.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MdiChild.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="MdiChild.Designer.cs">
       <DependentUpon>MdiChild.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MDIParent.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuStripAndCheckedListBox.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuStripAndCheckedListBox.Designer.cs">
       <DependentUpon>MenuStripAndCheckedListBox.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MultipleControls.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="MultipleControls.Designer.cs">
       <DependentUpon>MultipleControls.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Panels.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Panels.Designer.cs">
       <DependentUpon>Panels.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PropertyGrid.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="PropertyGrid.Designer.cs">
       <DependentUpon>PropertyGrid.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ScalingBeforeChanges.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="ScalingBeforeChanges.Designer.cs">
       <DependentUpon>ScalingBeforeChanges.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Splitter.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Splitter.Designer.cs">
       <DependentUpon>Splitter.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TreeViewTest.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="TreeViewTest.Designer.cs">
       <DependentUpon>TreeViewTest.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 
