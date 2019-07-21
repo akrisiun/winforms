@@ -2110,7 +2110,7 @@ example usage
         ///     different defaults.
         /// </devdoc>
         public static Color DefaultBackColor {
-            get { return SystemColors.Control;}
+            get { return SystemColorsForms.Control;}
         }
 
         /// <include file='doc\Control.uex' path='docs/doc[@for="Control.DefaultCursor"]/*' />

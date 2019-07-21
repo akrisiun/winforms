@@ -24,6 +24,9 @@
     <NetPackageVersion>4.6.0-preview4.19118.6</NetPackageVersion>
     <Net46PackageVersion>4.6.0</Net46PackageVersion>
     <!--<WarningsNotAsErrors>CS0433</WarningsNotAsErrors>-->
+
+    <DefineConstants>$(DefineConstants);NETCORE;NOPRIMITIVES;</DefineConstants>
+    <!--<DefineConstants>$(DefineConstants);NETCORE;PRIMITIVES;</DefineConstants>-->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -35,58 +38,31 @@
     <!-- 4.6.0-alpha-27220-8 -->
     <PackageReference Include="Accessibility" Version="$(LibPackageVersion)" />
     <PackageReference Include="System.Media.SoundPlayer" Version="$(LibPackageVersion)" />
-    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="3.0.0-preview4-27413-10" />
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="3.0.0-preview4.19118.6" />
+    <PackageReference Include="Microsoft.NETCore.DotNetHostPolicy" Version="[3.0.0-preview6*,]" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="[3.0.0-preview6*,]" />
+
     <PackageReference Include="Microsoft.NETCore.Targets" Version="2.0.0" />
 
     <PackageReference Include="Microsoft.Win32.Registry" Version="$(NetPackageVersion)" />
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="$(NetPackageVersion)" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(NetPackageVersion)" />
-    
+
     <PackageReference Include="System.Security.Cryptography.Cng" Version="$(NetPackageVersion)" />
-    <PackageReference Include="System.Security.Permissions" Version="4.6.0-preview4.19118.6" /> 
+    <!--<PackageReference Include="System.Security.Permissions" Version="[3.0.0-preview6*,]" />-->
+    <!--<PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />-->
+    <!--
+    -->
+    <!--<PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />-->
+    <PackageReference Include="System.Drawing.Common" Version="[4.6.0-preview6.*,]" />
     <!--<PackageReference Include="System.Drawing.Common" Version="4.5.1" /> -->
 
-    <!--.nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Security.Cryptography.Primitives.dll -->	  
-    
-    <!--<PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />-->
-    <!-- -->
-    <PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />
-    
+    <!--<PackageReference Include="System.Runtime.Extensions" Version="[4.3.0,]" />-->
     <!--
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Extensions" Version="3.0.0-preview5-27626-15" />
-
-    .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll
-                 HintPath = 'C:\Users\akris\.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll'
-    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll
-    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll
-    Primary reference "System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51".
-        .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll".
-    Primary reference "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll".
-    Primary reference "System.Drawing.Primitives, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll".
-
-.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll
-                 HintPath = 'C:\Users\akris\.nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll'
-    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll
-    .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll
-    Primary reference "System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51".
-        .nuget\packages\system.drawing.common\4.5.1\ref\netstandard2.0\System.Drawing.Common.dll".
-    Primary reference "System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.dll".
-    Primary reference "System.Drawing.Primitives, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
-        .nuget\packages\microsoft.netcore.app.ref\3.0.0-preview5-27626-15\ref\netcoreapp3.0\System.Drawing.Primitives.dll".
-    -->
-    <!--
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(NetPackageVersion)" />
 
     <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
     <PackageReference Include="Accessibility" Version="[4.6.0-alpha-27220-8,]" />
     <PackageReference Include="System.Media.SoundPlayer" Version="[4.6.0-alpha-27220-8,]" />
-
     <PackageReference Include="System.Security.Permissions" Version="$(SystemSecurityPermissionsPackageVersion)" />
     -->
   </ItemGroup>

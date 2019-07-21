@@ -169,7 +169,7 @@ namespace System.Drawing.Design
                 staticColors = new Color[CELLS - CELLS_CUSTOM];
 
                 for (int i = 0; i < staticCells.Length; i++)
-                    staticColors[i] = ColorTranslator.FromOle(staticCells[i]);
+                    staticColors[i] = ColorTranslatorForms.FromOle(staticCells[i]);
 
                 this.CustomColors = customColors;
             }

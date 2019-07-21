@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -802,7 +802,7 @@ namespace System.Windows.Forms {
                         g.DrawRectangle(SystemPens.Control, 0, 0, image.Width - 1, image.Height - 1);
                     }
 
-                    image.MakeTransparent(SystemColors.Control);
+                    image.MakeTransparent(SystemColorsForms.Control);
                     return image;
                 }
             }
@@ -1038,16 +1038,16 @@ namespace System.Windows.Forms {
                 Graphics g = e.Graphics;
                 renderer.DrawMenuItemBackground(new ToolStripItemRenderEventArgs(g, this));
 
-                Color textColor = SystemColors.MenuText;
+                Color textColor = SystemColorsForms.MenuText;
                 if (IsForeColorSet) {
                     textColor =  this.ForeColor;
                 }
                 else if (!this.IsTopLevel || (ToolStripManager.VisualStylesEnabled)) {
                     if (Selected || Pressed) {
-                        textColor = SystemColors.HighlightText;
+                        textColor = SystemColorsForms.HighlightText;
                     }
                     else {
-                        textColor =  SystemColors.MenuText;
+                        textColor =  SystemColorsForms.MenuText;
                     }
                 }
 
@@ -1092,8 +1092,8 @@ namespace System.Windows.Forms {
                     if (HasDropDownItems) {
 
                         ArrowDirection arrowDir = (rightToLeft) ? ArrowDirection.Left : ArrowDirection.Right;
-                        Color arrowColor = (Selected ||Pressed) ? SystemColors.HighlightText : SystemColors.MenuText;
-                        arrowColor = (Enabled) ? arrowColor : SystemColors.ControlDark;                   
+                        Color arrowColor = (Selected ||Pressed) ? SystemColorsForms.HighlightText : SystemColorsForms.MenuText;
+                        arrowColor = (Enabled) ? arrowColor : SystemColorsForms.ControlDark;                   
                         renderer.DrawArrow(new ToolStripArrowRenderEventArgs(g, this, menuItemInternalLayout.ArrowRectangle, arrowColor, arrowDir)); 
                     }
 

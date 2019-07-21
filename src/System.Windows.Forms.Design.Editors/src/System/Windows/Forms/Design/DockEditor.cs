@@ -1,4 +1,4 @@
-// Licensed to the .NET Foundation under one or more agreements.
+﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
@@ -14,7 +14,7 @@ namespace System.Windows.Forms.Design
     ///         Implements the design time editor for specifying the
     ///         <see cref='System.Windows.Forms.Control.Dock' /> property.
     /// </summary>
-    [CLSCompliant(false)]
+    // [CLSCompliant(false)]
     public sealed class DockEditor : UITypeEditor
     {
         private DockUI dockUI;

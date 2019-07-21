@@ -8,4 +8,4 @@ dotnet test src\System.Windows.Forms\tests\UnitTests `
 	 | select-string -pattern xUnit. -NotMatch
 
 # $psVersiontable
-dotnet --info | findstr : | select-string -pattern 2. -notmatch
+dotnet --info | findstr : | select-string -pattern '2.1' -notmatch | select-string -pattern '2.2' -notmatch
