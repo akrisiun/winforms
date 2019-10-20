@@ -46,20 +46,15 @@
     <PackageReference Include="Microsoft.Win32.Registry" Version="$(NetPackageVersion)" />
     <PackageReference Include="Microsoft.Win32.SystemEvents" Version="$(NetPackageVersion)" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="$(NetPackageVersion)" />
+    <PackageReference Include="System.Resources.Extensions" Version="4.6.0" />
+	<PackageReference Include="Microsoft.Win32.SystemEvents" Version="[4.6.0]" />
+    <PackageReference Include="System.Drawing.Common" Version="[4.6.*,)" />
 
     <PackageReference Include="System.Security.Cryptography.Cng" Version="$(NetPackageVersion)" />
     <!--<PackageReference Include="System.Security.Permissions" Version="[3.0.0-preview6*,]" />-->
-    <!--<PackageReference Include="System.Drawing.Primitives" Version="4.0.0" />-->
-    <!--
-    -->
-    <!--<PackageReference Include="System.Drawing.Common" Version="4.6.0-preview4.19118.6" />-->
-    <PackageReference Include="System.Drawing.Common" Version="[4.6.0-preview6.*,]" />
-    <!--<PackageReference Include="System.Drawing.Common" Version="4.5.1" /> -->
-
     <!--<PackageReference Include="System.Runtime.Extensions" Version="[4.3.0,]" />-->
     <!--
     <PackageReference Include="System.Drawing.Design.Primitives" Version="$(NetPackageVersion)" />
-
     <PackageReference Include="System.Security.Cryptography.Cng" Version="4.5.0" />
     <PackageReference Include="Accessibility" Version="[4.6.0-alpha-27220-8,]" />
     <PackageReference Include="System.Media.SoundPlayer" Version="[4.6.0-alpha-27220-8,]" />
