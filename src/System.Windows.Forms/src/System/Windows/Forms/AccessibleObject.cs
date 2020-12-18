@@ -2,6 +2,79 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
+namespace Accessibility
+{
+    using System;
+    using System.Runtime.InteropServices;
+
+    [Guid("618736E0-3C3D-11CF-810C-00AA00389B71")]
+    [TypeLibType(TypeLibTypeFlags.FHidden | TypeLibTypeFlags.FDual | TypeLibTypeFlags.FDispatchable)]
+    public interface IAccessible
+    {
+        [DispId(-5001)]
+        int accChildCount { get; }
+        [DispId(-5011)]
+        object accFocus { get; }
+        [DispId(-5000)]
+        object accParent { get; }
+        [DispId(-5012)]
+        object accSelection { get; }
+ 
+        [DispId(-5018)][TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        void accDoDefaultAction(object varChild);
+        
+        [DispId(-5017)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        object accHitTest(int xLeft, int yTop);
+        [DispId(-5015)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        void accLocation(out int pxLeft, out int pyTop, out int pcxWidth, out int pcyHeight, object varChild);
+        [DispId(-5016)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        object accNavigate(int navDir, object varStart);
+        [DispId(-5014)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        void accSelect(int flagsSelect, object varChild);
+        [DispId(-5002)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        object get_accChild(object varChild);
+        [DispId(-5013)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accDefaultAction(object varChild);
+        [DispId(-5005)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accDescription(object varChild);
+        
+        [DispId(-5008)][TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accHelp(object varChild);
+
+        [DispId(-5009)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        int get_accHelpTopic(out string pszHelpFile, object varChild);
+        [DispId(-5010)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accKeyboardShortcut(object varChild);
+        [DispId(-5003)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accName(object varChild);
+        [DispId(-5006)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        object get_accRole(object varChild);
+        [DispId(-5007)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        object get_accState(object varChild);
+        [DispId(-5004)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        string get_accValue(object varChild);
+        [DispId(-5003)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        void set_accName(object varChild, string pszName);
+        [DispId(-5004)]
+        [TypeLibFunc(TypeLibFuncFlags.FHidden)]
+        void set_accValue(object varChild, string pszValue);
+    }
+}
+
 namespace System.Windows.Forms
 {
     using Accessibility;
@@ -2872,6 +2945,8 @@ namespace System.Windows.Forms
                                     UnsafeNativeMethods.ILegacyIAccessibleProvider {
 
         private IAccessible publicIAccessible;                       // AccessibleObject as IAccessible
+        public IAccessible GetAccessible() => publicIAccessible;
+
         private UnsafeNativeMethods.IEnumVariant publicIEnumVariant; // AccessibleObject as IEnumVariant
         private UnsafeNativeMethods.IOleWindow publicIOleWindow;     // AccessibleObject as IOleWindow
         private IReflect publicIReflect;                             // AccessibleObject as IReflect

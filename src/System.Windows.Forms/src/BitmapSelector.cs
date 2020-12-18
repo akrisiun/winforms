@@ -27,13 +27,18 @@ namespace System.Drawing {
             get {
                 if (_suffix == null) {
                     _suffix = string.Empty;
-                    var section = ConfigurationManager.GetSection("system.drawing") as SystemDrawingSection;
-                    if (section != null) {
-                        var value = section.BitmapSuffix;
-                        if (value != null && value is string) {
-                            _suffix = (string)value;
+#if !UNIX
+                    if (Environment.OSVersion.Platform == System.PlatformID.Win32NT)    
+                    {
+                        var section = ConfigurationManager.GetSection("system.drawing") as SystemDrawingSection;
+                        if (section != null) {
+                            var value = section.BitmapSuffix;
+                            if (value != null && value is string) {
+                                _suffix = (string)value;
+                            }
                         }
                     }
+#endif
                 }
                 return _suffix;
             }

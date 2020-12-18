@@ -2288,11 +2288,11 @@ namespace System.Windows.Forms
         {
             Debug.Assert( !this.flagState[IS_NULL_MASK], "This method must be called when a Mask is provided." );
 
-            if (this.BeepOnError)
+            /* if (this.BeepOnError)
             {
                 System.Media.SoundPlayer sp = new System.Media.SoundPlayer();
                 sp.Play();
-            }
+            } */
 
             MaskInputRejectedEventHandler eh = Events[EVENT_MASKINPUTREJECTED] as MaskInputRejectedEventHandler;
 

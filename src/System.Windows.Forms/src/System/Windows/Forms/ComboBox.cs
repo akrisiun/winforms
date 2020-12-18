@@ -4781,7 +4781,7 @@ namespace System.Windows.Forms {
             public override string DefaultAction {
                 get {
                     var systemIAccessible = GetSystemIAccessibleInternal();
-                    return systemIAccessible.accDefaultAction[COMBOBOX_DROPDOWN_BUTTON_ACC_ITEM_INDEX];
+                    return systemIAccessible.get_accDefaultAction(COMBOBOX_DROPDOWN_BUTTON_ACC_ITEM_INDEX);
                 }
             }
 
@@ -4862,8 +4862,8 @@ namespace System.Windows.Forms {
             /// </summary>
             public override string Help {
                 get {
-                    var systemIAccessible = GetSystemIAccessibleInternal();
-                    return systemIAccessible.accHelp[COMBOBOX_DROPDOWN_BUTTON_ACC_ITEM_INDEX];
+                    IAccessible systemIAccessible = GetSystemIAccessibleInternal();
+                    return systemIAccessible.get_accHelp(COMBOBOX_DROPDOWN_BUTTON_ACC_ITEM_INDEX);
                 }
             }
 

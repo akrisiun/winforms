@@ -159,9 +159,13 @@ namespace System.Windows.Forms {
         private static int WM_GETCONTROLTYPE;
 
         static Control() {
-            WM_GETCONTROLNAME = SafeNativeMethods.RegisterWindowMessage("WM_GETCONTROLNAME");
-            WM_GETCONTROLTYPE = SafeNativeMethods.RegisterWindowMessage("WM_GETCONTROLTYPE");
 
+            // if (!Environment.OSVersion.Platform.MacOSX && !Environment.OSVersion.Platform.Unix)
+            if (Environment.OSVersion.Platform == System.PlatformID.Win32NT)
+            {
+                WM_GETCONTROLNAME = SafeNativeMethods.RegisterWindowMessage("WM_GETCONTROLNAME");
+                WM_GETCONTROLTYPE = SafeNativeMethods.RegisterWindowMessage("WM_GETCONTROLTYPE");
+            }
         }
 
         internal const int STATE_CREATED                = 0x00000001;
@@ -487,9 +491,11 @@ example usage
 #endif
             propertyStore = new PropertyStore();
 
-            DpiHelper.InitializeDpiHelperForWinforms();
-            // Initialize DPI to the value on the primary screen, we will have the correct value when the Handle is created.
-            deviceDpi = DpiHelper.DeviceDpi;
+            if (Environment.OSVersion.Platform == System.PlatformID.Win32NT) {
+                DpiHelper.InitializeDpiHelperForWinforms();
+                // Initialize DPI to the value on the primary screen, we will have the correct value when the Handle is created.
+                deviceDpi = DpiHelper.DeviceDpi;
+            }
 
             window = new ControlNativeWindow(this);
             RequiredScalingEnabled = true;

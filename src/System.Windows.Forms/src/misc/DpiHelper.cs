@@ -49,12 +49,17 @@ namespace System.Windows.Forms
                 return;
             }
 
-            IntPtr hDC = UnsafeNativeMethods.GetDC(NativeMethods.NullHandleRef);
-            if (hDC != IntPtr.Zero)
-            {
-                deviceDpi = UnsafeNativeMethods.GetDeviceCaps(new HandleRef(null, hDC), CAPS.LOGPIXELSX);
+            if (Environment.OSVersion.Platform != System.PlatformID.Win32NT)    {
+                    deviceDpi = 96; // Default $$$$ 
+            } else {
 
-                UnsafeNativeMethods.ReleaseDC(NativeMethods.NullHandleRef, new HandleRef(null, hDC));
+                IntPtr hDC = UnsafeNativeMethods.GetDC(NativeMethods.NullHandleRef);
+                if (hDC != IntPtr.Zero)
+                {
+                    deviceDpi = UnsafeNativeMethods.GetDeviceCaps(new HandleRef(null, hDC), CAPS.LOGPIXELSX);
+
+                    UnsafeNativeMethods.ReleaseDC(NativeMethods.NullHandleRef, new HandleRef(null, hDC));
+                }
             }
             isInitialized = true;
         }
@@ -67,24 +72,32 @@ namespace System.Windows.Forms
             }
 
             // initialize shared fields
-            Initialize();
+            try {
+                Initialize();
 
-            // We are in Windows 10/1603 or greater when this API is present.
-            if (ApiHelper.IsApiAvailable(ExternDll.User32, nameof(CommonUnsafeNativeMethods.GetThreadDpiAwarenessContext)))
-            {
-
-                // We are on Windows 10/1603 or greater all right, but we could still be DpiUnaware or SystemAware, so let's find that out...
-                NativeMethods.PROCESS_DPI_AWARENESS processDpiAwareness;
-                var currentProcessId = SafeNativeMethods.GetCurrentProcessId();
-                IntPtr hProcess = SafeNativeMethods.OpenProcess(SafeNativeMethods.PROCESS_QUERY_INFORMATION, false, currentProcessId);
-                var result = SafeNativeMethods.GetProcessDpiAwareness(hProcess, out processDpiAwareness);
-
-                // Only if we're not, it makes sense to query for PerMonitorV2 awareness from now on, if needed.
-                if (!(processDpiAwareness == CAPS.PROCESS_DPI_AWARENESS.PROCESS_DPI_UNAWARE ||
-                      processDpiAwareness == CAPS.PROCESS_DPI_AWARENESS.PROCESS_SYSTEM_DPI_AWARE))
+                // We are in Windows 10/1603 or greater when this API is present.
+                if (ApiHelper.IsApiAvailable(ExternDll.User32, nameof(CommonUnsafeNativeMethods.GetThreadDpiAwarenessContext)))
                 {
-                    doesNeedQueryForPerMonitorV2Awareness = true;
+
+                    // We are on Windows 10/1603 or greater all right, but we could still be DpiUnaware or SystemAware, so let's find that out...
+                    NativeMethods.PROCESS_DPI_AWARENESS processDpiAwareness;
+                    var currentProcessId = SafeNativeMethods.GetCurrentProcessId();
+                    IntPtr hProcess = SafeNativeMethods.OpenProcess(SafeNativeMethods.PROCESS_QUERY_INFORMATION, false, currentProcessId);
+                    var result = SafeNativeMethods.GetProcessDpiAwareness(hProcess, out processDpiAwareness);
+
+                    // Only if we're not, it makes sense to query for PerMonitorV2 awareness from now on, if needed.
+                    if (!(processDpiAwareness == CAPS.PROCESS_DPI_AWARENESS.PROCESS_DPI_UNAWARE ||
+                        processDpiAwareness == CAPS.PROCESS_DPI_AWARENESS.PROCESS_SYSTEM_DPI_AWARE))
+                    {
+                        doesNeedQueryForPerMonitorV2Awareness = true;
+                    }
                 }
+            } catch(Exception e) {
+
+                 if (Environment.OSVersion.Platform == System.PlatformID.Win32NT)
+                    throw e;
+                 else 
+                    Console.WriteLine($"Failed DpiHelper {e}");
             }
 
             if (IsScalingRequired || doesNeedQueryForPerMonitorV2Awareness)
