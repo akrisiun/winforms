@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.0;net471</TargetFrameworks>
     <AssemblyName>System.Windows.Forms</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CLSCompliant>false</CLSCompliant>
     <NoWarn>$(NoWarn);618;649</NoWarn>
     <DefineConstants>$(DefineConstants);WINDOWS_FORMS_SWITCHES;WINFORMS_NAMESPACE;OPTIMIZED_MEASUREMENTDC;</DefineConstants>
     <Win32Manifest>Resources\System\Windows\Forms\XPThemes.manifest</Win32Manifest>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     
     <PreReleaseLabel>beta</PreReleaseLabel>
     <PackageVersion Condition="'$(PackageVersion)' == ''">4.8.0</PackageVersion>
