@@ -22,7 +22,7 @@ namespace System.Drawing
         public static int ToWin32(Color c) => ColorTranslator.ToWin32(c);
     }
 
-#if NOPRIMITIVES
+#if NOPRIMITIVES2
     // https://source.dot.net/#System.Drawing.Primitives/System/Drawing/ColorTranslator.cs,bf4fe372fd7fd3c9
     internal static class ColorTranslator
     {
@@ -997,7 +997,7 @@ namespace System.Drawing
     }
 
 
-    static class SystemColors
+    static class SystemColors2
     {
         public static Color ActiveBorder => ColorUtil.FromKnownColor(KnownColor.ActiveBorder);
         public static Color ActiveCaption => ColorUtil.FromKnownColor(KnownColor.ActiveCaption);

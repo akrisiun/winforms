@@ -85,12 +85,15 @@ namespace System.Drawing.Design {
         ///      canvas.  Painting should be done within the boundaries of the
         ///      provided rectangle.
         /// </devdoc>
+#if NET471_X
         public override void PaintValue(PaintValueEventArgsForms e) {
             if (innerEditor != null) {
                innerEditor.PaintValue(e);
             }
             base.PaintValue(e);
         }
+#endif
+
     }
 }
 

@@ -2134,8 +2134,10 @@ namespace System.Windows.Forms.PropertyGridInternal {
                 if (!Rectangle.Intersect(rectPaint, clipRect).IsEmpty) {
                    UITypeEditor uie = UITypeEditor;
                    if (uie != null) {
-                       uie.PaintValue(new PaintValueEventArgsForms(this, val, g, rectPaint));
-                   }
+#if !NET471
+                        uie.PaintValue(new System.Drawing.Design.PaintValueEventArgsForms(this, val, g, rectPaint));
+#endif
+                    }
    
                    // paint a border around the area
                    rectPaint.Width --;

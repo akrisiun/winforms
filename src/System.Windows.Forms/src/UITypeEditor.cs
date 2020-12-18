@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace System.Drawing.Design
 {
-
+#if !NET471
     public interface IPropertyValueUIService
     {
         PropertyValueUIItem[] GetPropertyUIValueItems(object source, PropertyDescriptor propertyInfo);
@@ -39,18 +39,18 @@ namespace System.Drawing.Design
         Modal = 1,
         DropDown = 2
     }
-    
+#endif
+    public class PaintValueEventArgsForms : EventArgs {
+        public PaintValueEventArgsForms(params object[] args) 
+            // : base(args) 
+        { }
+    }
+
     public enum UITypeEditorEditStyle48
     {
         Modaless = 0,
         Modal = 1,
         DropDown = 2
-    }
-
-    public class PaintValueEventArgsForms : EventArgs {
-        public PaintValueEventArgsForms(params object[] args) 
-            // : base(args) 
-        { }
     }
 
     class PaintValueEventArgs : EventArgs
@@ -59,6 +59,8 @@ namespace System.Drawing.Design
         {
         }
     }
+
+#if !NET471
 
     internal abstract class UITypeEditor
     {
@@ -70,9 +72,10 @@ namespace System.Drawing.Design
 
         public virtual bool GetPaintValueSupported(ITypeDescriptorContext context) => false;
 
-        public virtual void PaintValue(PaintValueEventArgsForms e) { }
+        public virtual void PaintValue(System.Drawing.Design.PaintValueEventArgsForms e) { }
 
         // 
         public bool IsDropDownResizable { get; set; }
     }
+#endif
 }

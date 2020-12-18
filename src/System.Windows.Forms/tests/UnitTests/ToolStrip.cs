@@ -16,8 +16,8 @@ namespace System.Windows.Forms.Tests
             Assert.NotNull(ts);
             Assert.False(ts.ImageScalingSize.IsEmpty);
             // ankr: origin 16
-            Assert.Equal(18, ts.ImageScalingSize.Width);
-            Assert.Equal(18, ts.ImageScalingSize.Height);
+            Assert.Equal(16, ts.ImageScalingSize.Width);
+            Assert.Equal(16, ts.ImageScalingSize.Height);
             Assert.True(ts.CanOverflow);
             Assert.False(ts.TabStop);
             Assert.False(ts.MenuAutoExpand);
